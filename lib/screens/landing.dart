@@ -33,16 +33,18 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 30,
             ),
-            Expanded(
-                child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(60),
-                    topRight: Radius.circular(60),
-                  )),
-              child: InputWrapper(),
-            )),
+            Row(children: [
+              Expanded(
+                  child: Container(
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(60),
+                      topRight: Radius.circular(60),
+                    )),
+                child: InputWrapper(),
+              ))
+            ]),
           ],
         ),
       )),

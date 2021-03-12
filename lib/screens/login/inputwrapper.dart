@@ -26,7 +26,7 @@ class InputWrapper extends StatelessWidget {
             style: TextStyle(color: Colors.grey),
           ),
           SizedBox(
-            height: 40,
+            height: 20,
           ),
           Button()
         ],

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../home.dart';
+import '../landing.dart';
 
 class WebApp extends StatelessWidget {
   const WebApp({key}) : super(key: key);

@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jonavilcellofukai.jap_training_beginner">
-   <application
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
         android:label="jap_training_beginner"
         android:icon="@mipmap/ic_launcher">
         <activity
@@ -54,8 +56,6 @@
                <data android:scheme="@string/fb_login_protocol_scheme" />
            </intent-filter>
        </activity>
-
    </application>
-    <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">jap_training_beginner</string>
     <string name="facebook_app_id">139578028050835</string>
     <string name="fb_login_protocol_scheme">fb139578028050835</string>
+
 </resources>
