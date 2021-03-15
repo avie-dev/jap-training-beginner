@@ -13,7 +13,7 @@ class _HiraganaQuizState extends State<HiraganaQuiz> {
 
   getHiraganaQuizFromSheet() async {
     return await http
-        .get(Uri.http("https://script.google.com",
+        .get(Uri.https("script.google.com",
             "/macros/s/AKfycbzGMrI-KwE8Wrokbkv4f6I_blZjSMgjwZOH04rLTpRJk4qIH7TGw0JnoDbpZ6L5MZt_TA/exec"))
         .then((response) {
       var jsonHiraganaQuiz = convert.jsonDecode(response.body) as List;
@@ -24,7 +24,19 @@ class _HiraganaQuizState extends State<HiraganaQuiz> {
   }
 
   @override
+  void initState() {
+    getHiraganaQuizFromSheet();
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Container(child: Text('test'));
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Students"),
+        elevation: 0,
+      ),
+      body: Container(child: Text('test')),
+    );
   }
 }
