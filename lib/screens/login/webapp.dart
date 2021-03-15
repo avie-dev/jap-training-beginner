@@ -8,7 +8,7 @@ class WebApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      home: Landing(),
       debugShowCheckedModeBanner: false,
     );
   }

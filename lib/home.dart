@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:provider/provider.dart';
+import 'package:jap_training_beginner/screens/quizhome.dart';
 
 class Home extends StatefulWidget {
   @override

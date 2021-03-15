@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'login/inputwrapper.dart';
 
-class Home extends StatelessWidget {
+class Landing extends StatelessWidget {
   final double elevation;
 
-  const Home({Key key, this.elevation}) : super(key: key);
+  const Landing({Key key, this.elevation}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
