@@ -7,7 +7,7 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Column(children: <Widget>[
-      Padding(padding: EdgeInsets.all(20.0)),
+      Container(child: Padding(padding: EdgeInsets.all(20.0))),
       SizedBox(),
       CircleAvatar(
         backgroundImage: AssetImage('images/jap-logo-white-bg.png'),
@@ -20,7 +20,8 @@ class CategoriesScreen extends StatelessWidget {
       Expanded(
           child: GridView(
               children: trainingCategories
-                  .map((catData) => CategoryItem(catData.title, catData.color))
+                  .map((catData) =>
+                      CategoryItem(catData.id, catData.title, catData.color))
                   .toList(),
               gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
                 maxCrossAxisExtent: 200,
@@ -29,15 +30,5 @@ class CategoriesScreen extends StatelessWidget {
                 mainAxisSpacing: 20,
               )))
     ]));
-    /*GridView(
-            children: trainingCategories
-                .map((catData) => CategoryItem(catData.title, catData.color))
-                .toList(),
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200,
-              childAspectRatio: 3 / 2,
-              crossAxisSpacing: 20,
-              mainAxisSpacing: 20,
-            )));*/
   }
 }
