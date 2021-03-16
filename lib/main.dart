@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/auth/auth.dart';
 import 'package:jap_training_beginner/screens/content/hiragana.dart';
+import 'package:jap_training_beginner/screens/content/quizcategory.dart';
 import 'package:jap_training_beginner/screens/landing.dart';
 import 'package:jap_training_beginner/screens/login/login.dart';
 import 'package:jap_training_beginner/screens/login/button.dart';
@@ -22,10 +23,12 @@ class App extends StatelessWidget {
       child: MaterialApp(
         title: 'Japanese Language Training',
         theme: ThemeData(
-          primarySwatch: Colors.blueGrey,
-        ),
+            primarySwatch: Colors.blueGrey,
+            accentColor: Colors.amber,
+            canvasColor: Color.fromRGBO(255, 254, 229, 1),
+            fontFamily: 'Raleway'),
         //home: Login(),
-        home: HiraganaQuiz(),
+        home: CategoriesScreen(),
       ),
     );
   }

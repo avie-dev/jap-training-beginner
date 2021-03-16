@@ -1,5 +1,6 @@
 class HiraganaQuizModel {
   String id;
+  String memo;
   String question;
   String choicesA;
   String choicesB;
@@ -10,6 +11,7 @@ class HiraganaQuizModel {
 
   HiraganaQuizModel(
       {this.id,
+      this.memo,
       this.question,
       this.choicesA,
       this.choicesB,
@@ -21,6 +23,7 @@ class HiraganaQuizModel {
   factory HiraganaQuizModel.fromJson(dynamic json) {
     return HiraganaQuizModel(
       id: "${json['id']}",
+      memo: "${json['memo']}",
       question: "${json['question']}",
       choicesA: "${json['choicesA']}",
       choicesB: "${json['choicesB']}",
@@ -33,6 +36,7 @@ class HiraganaQuizModel {
 
   Map toJson() => {
         "question": question,
+        "memo": memo,
         "choicesA": choicesA,
         "choicesB": choicesB,
         "choicesC": choicesC,
