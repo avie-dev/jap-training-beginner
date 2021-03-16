@@ -2,17 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/screens/category_kana.dart';
 
 class CategoryKana extends StatelessWidget {
-  final String id;
-  final String title;
-  final Color color;
-
-  CategoryKana(this.id, this.title, this.color);
-
   @override
   Widget build(BuildContext context) {
+    final routeArgs =
+        ModalRoute.of(context).settings.arguments as Map<String, String>;
+    final categorytitle = routeArgs['title'];
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: Text(categorytitle),
       ),
       body: Center(
         child: Text('kana here'),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/auth/auth.dart';
+import 'package:jap_training_beginner/screens/category_kana.dart';
 import 'package:jap_training_beginner/screens/content/hiragana.dart';
 import 'package:jap_training_beginner/screens/content/quizcategory.dart';
 import 'package:jap_training_beginner/screens/landing.dart';
@@ -29,6 +30,7 @@ class App extends StatelessWidget {
             fontFamily: 'Raleway'),
         //home: Login(),
         home: CategoriesScreen(),
+        routes: {'/categories': (ctx) => CategoryKana()},
       ),
     );
   }
