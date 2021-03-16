@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jap_training_beginner/screens/category_kana.dart';
 
 class CategoryKana extends StatelessWidget {
+  static const routeName = '/categories';
   @override
   Widget build(BuildContext context) {
     final routeArgs =

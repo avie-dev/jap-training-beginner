@@ -29,8 +29,11 @@ class App extends StatelessWidget {
             canvasColor: Color.fromRGBO(255, 254, 229, 1),
             fontFamily: 'Raleway'),
         //home: Login(),
-        home: CategoriesScreen(),
-        routes: {'/categories': (ctx) => CategoryKana()},
+        //home: CategoriesScreen(),
+        routes: {
+          '/': (ctx) => CategoriesScreen(),
+          CategoryKana.routeName: (ctx) => CategoryKana()
+        },
       ),
     );
   }

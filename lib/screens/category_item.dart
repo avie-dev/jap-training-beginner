@@ -9,7 +9,7 @@ class CategoryItem extends StatelessWidget {
   CategoryItem(this.id, this.title, this.color);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed('/categories', arguments: {
+    Navigator.of(ctx).pushNamed(CategoryKana.routeName, arguments: {
       'id': id,
       'title': title,
     });
