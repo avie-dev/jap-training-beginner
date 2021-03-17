@@ -15,18 +15,8 @@ class FlashcardScreen extends StatelessWidget {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['id'];
-    final aRow = 'preARow';
-    final kaRow = 'kaRow';
-    final saRow = 'saRow';
-    final taRow = 'taRow';
-    final naRow = 'naRow';
-    final haRow = 'haRow';
-    final maRow = 'maRow';
-    final yaRow = 'yaRow';
-    final raRow = 'raRow';
-    final waRow = 'waRow';
 
+    /* Repeated code: Fix this later */
     final kanaARow = kanaInfo.where((kana) {
       return (kana.category.contains(categoryTitle) &&
           kana.kanarow.contains(aRow));
@@ -77,99 +67,104 @@ class FlashcardScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(categoryTitle),
       ),
-      body: ListView.builder(
-        //shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
-        padding: const EdgeInsets.all(10),
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (ctx, index) {
-          return Column(
-            // Just get it moving for now, don't mind the repeated code. fix it later ><
-            children: [
-              Flashcard(
-                id: kanaARow[index].id,
-                kanarow: kanaARow[index].kanarow,
-                category: kanaARow[index].category,
-                kana: kanaARow[index].kana,
-                roomaji: kanaARow[index].roomaji,
-                color: kanaARow[index].color,
-              ),
-              Flashcard(
-                id: kanaKaRow[index].id,
-                kanarow: kanaKaRow[index].kanarow,
-                category: kanaKaRow[index].category,
-                kana: kanaKaRow[index].kana,
-                roomaji: kanaKaRow[index].roomaji,
-                color: kanaKaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaSaRow[index].id,
-                kanarow: kanaSaRow[index].kanarow,
-                category: kanaSaRow[index].category,
-                kana: kanaSaRow[index].kana,
-                roomaji: kanaSaRow[index].roomaji,
-                color: kanaSaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaTaRow[index].id,
-                kanarow: kanaTaRow[index].kanarow,
-                category: kanaTaRow[index].category,
-                kana: kanaTaRow[index].kana,
-                roomaji: kanaTaRow[index].roomaji,
-                color: kanaTaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaNaRow[index].id,
-                kanarow: kanaNaRow[index].kanarow,
-                category: kanaNaRow[index].category,
-                kana: kanaNaRow[index].kana,
-                roomaji: kanaNaRow[index].roomaji,
-                color: kanaNaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaHaRow[index].id,
-                kanarow: kanaHaRow[index].kanarow,
-                category: kanaHaRow[index].category,
-                kana: kanaHaRow[index].kana,
-                roomaji: kanaHaRow[index].roomaji,
-                color: kanaHaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaMaRow[index].id,
-                kanarow: kanaMaRow[index].kanarow,
-                category: kanaMaRow[index].category,
-                kana: kanaMaRow[index].kana,
-                roomaji: kanaMaRow[index].roomaji,
-                color: kanaMaRow[index].color,
-              ),
-              Flashcard(
-                id: kanayaRow[index].id,
-                kanarow: kanayaRow[index].kanarow,
-                category: kanayaRow[index].category,
-                kana: kanayaRow[index].kana,
-                roomaji: kanayaRow[index].roomaji,
-                color: kanayaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaRaRow[index].id,
-                kanarow: kanaRaRow[index].kanarow,
-                category: kanaRaRow[index].category,
-                kana: kanaRaRow[index].kana,
-                roomaji: kanaRaRow[index].roomaji,
-                color: kanaRaRow[index].color,
-              ),
-              Flashcard(
-                id: kanaWaRow[index].id,
-                kanarow: kanaWaRow[index].kanarow,
-                category: kanaWaRow[index].category,
-                kana: kanaWaRow[index].kana,
-                roomaji: kanaWaRow[index].roomaji,
-                color: kanaWaRow[index].color,
-              ),
-            ],
-          );
-        },
-        itemCount: 5,
+      body: Center(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: ListView.builder(
+            shrinkWrap: true,
+            //physics: const NeverScrollableScrollPhysics(),
+            padding: const EdgeInsets.all(10),
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (ctx, index) {
+              return Column(
+                children: [
+                  /* Repeated code: Fix this later */
+                  Flashcard(
+                    id: kanaARow[index].id,
+                    kanarow: kanaARow[index].kanarow,
+                    category: kanaARow[index].category,
+                    kana: kanaARow[index].kana,
+                    roomaji: kanaARow[index].roomaji,
+                    color: kanaARow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaKaRow[index].id,
+                    kanarow: kanaKaRow[index].kanarow,
+                    category: kanaKaRow[index].category,
+                    kana: kanaKaRow[index].kana,
+                    roomaji: kanaKaRow[index].roomaji,
+                    color: kanaKaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaSaRow[index].id,
+                    kanarow: kanaSaRow[index].kanarow,
+                    category: kanaSaRow[index].category,
+                    kana: kanaSaRow[index].kana,
+                    roomaji: kanaSaRow[index].roomaji,
+                    color: kanaSaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaTaRow[index].id,
+                    kanarow: kanaTaRow[index].kanarow,
+                    category: kanaTaRow[index].category,
+                    kana: kanaTaRow[index].kana,
+                    roomaji: kanaTaRow[index].roomaji,
+                    color: kanaTaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaNaRow[index].id,
+                    kanarow: kanaNaRow[index].kanarow,
+                    category: kanaNaRow[index].category,
+                    kana: kanaNaRow[index].kana,
+                    roomaji: kanaNaRow[index].roomaji,
+                    color: kanaNaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaHaRow[index].id,
+                    kanarow: kanaHaRow[index].kanarow,
+                    category: kanaHaRow[index].category,
+                    kana: kanaHaRow[index].kana,
+                    roomaji: kanaHaRow[index].roomaji,
+                    color: kanaHaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaMaRow[index].id,
+                    kanarow: kanaMaRow[index].kanarow,
+                    category: kanaMaRow[index].category,
+                    kana: kanaMaRow[index].kana,
+                    roomaji: kanaMaRow[index].roomaji,
+                    color: kanaMaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanayaRow[index].id,
+                    kanarow: kanayaRow[index].kanarow,
+                    category: kanayaRow[index].category,
+                    kana: kanayaRow[index].kana,
+                    roomaji: kanayaRow[index].roomaji,
+                    color: kanayaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaRaRow[index].id,
+                    kanarow: kanaRaRow[index].kanarow,
+                    category: kanaRaRow[index].category,
+                    kana: kanaRaRow[index].kana,
+                    roomaji: kanaRaRow[index].roomaji,
+                    color: kanaRaRow[index].color,
+                  ),
+                  Flashcard(
+                    id: kanaWaRow[index].id,
+                    kanarow: kanaWaRow[index].kanarow,
+                    category: kanaWaRow[index].category,
+                    kana: kanaWaRow[index].kana,
+                    roomaji: kanaWaRow[index].roomaji,
+                    color: kanaWaRow[index].color,
+                  ),
+                ],
+              );
+            },
+            itemCount: 5,
+          ),
+        ),
       ),
     );
   }

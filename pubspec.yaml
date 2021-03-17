@@ -19,6 +19,7 @@ dependencies:
   provider: ^5.0.0
   http: ^0.13.0
   kana_kit: ^2.0.0
+  flip_card: ^0.4.4
 
 dev_dependencies:
   flutter_test:

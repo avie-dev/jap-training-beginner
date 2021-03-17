@@ -5,13 +5,13 @@ import '../models/category.dart';
 const trainingCategories = const [
   Category(
     id: 'c1',
-    title: 'Hiragana Flashcard',
+    title: 'Hiragana List',
     color: Colors.purple,
     img: 'images/kimono girl_half.png',
   ),
   Category(
     id: 'c2',
-    title: 'Katakana Flashcard',
+    title: 'Katakana List',
     color: Colors.red,
     img: 'images/kimono_boy_half.png',
   ),

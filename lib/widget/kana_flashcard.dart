@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jap_training_beginner/models/kana_model.dart';
-import 'package:jap_training_beginner/models/kana_data.dart';
-import 'package:jap_training_beginner/widget/category_item.dart';
+import 'package:flip_card/flip_card.dart';
 
 class Flashcard extends StatelessWidget {
   static const routeName = '/flashcards';
@@ -31,7 +29,6 @@ class Flashcard extends StatelessWidget {
   Widget build(BuildContext context) {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
-    final categorytitle = routeArgs['title'];
     return Stack(
       children: <Widget>[
         Container(
@@ -44,7 +41,7 @@ class Flashcard extends StatelessWidget {
               child: Text(kana,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 20,
+                    fontSize: 24,
                   )),
             )),
       ],
