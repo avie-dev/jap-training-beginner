@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/auth/auth.dart';
 import 'package:jap_training_beginner/screens/category_kana.dart';
-import 'package:jap_training_beginner/screens/content/hiragana.dart';
+import 'package:jap_training_beginner/widget/kana_flashcard.dart';
+import 'package:jap_training_beginner/widget/kana_flashcard.dart';
+// import 'package:jap_training_beginner/screens/content/hiragana.dart';
 import 'package:jap_training_beginner/screens/content/quizcategory.dart';
-import 'package:jap_training_beginner/screens/landing.dart';
-import 'package:jap_training_beginner/screens/login/login.dart';
-import 'package:jap_training_beginner/screens/login/button.dart';
+// import 'package:jap_training_beginner/screens/landing.dart';
+// import 'package:jap_training_beginner/screens/login/login.dart';
+// import 'package:jap_training_beginner/screens/login/button.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -29,10 +31,10 @@ class App extends StatelessWidget {
             canvasColor: Color.fromRGBO(255, 254, 229, 1),
             fontFamily: 'Raleway'),
         //home: Login(),
-        //home: CategoriesScreen(),
         routes: {
           '/': (ctx) => CategoriesScreen(),
-          CategoryKana.routeName: (ctx) => CategoryKana()
+          FlashcardScreen.routeName: (ctx) => FlashcardScreen(),
+          Flashcard.routeName: (ctx) => Flashcard(),
         },
       ),
     );
