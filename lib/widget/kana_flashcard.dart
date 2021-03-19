@@ -29,22 +29,48 @@ class Flashcard extends StatelessWidget {
   Widget build(BuildContext context) {
     final routeArgs =
         ModalRoute.of(context).settings.arguments as Map<String, String>;
-    return Stack(
-      children: <Widget>[
-        Container(
-            decoration: BoxDecoration(
-                gradient: RadialGradient(
-              colors: [color.withOpacity(0.1), Colors.white70],
-            )),
-            padding: EdgeInsets.all(12),
-            child: Center(
-              child: Text(kana,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 24,
-                  )),
-            )),
-      ],
+    return Card(
+      elevation: 0,
+      shape: RoundedRectangleBorder(
+          borderRadius: const BorderRadius.all(
+        Radius.circular(8.0),
+      )),
+      child: Center(
+        child: FlipCard(
+          direction: FlipDirection.VERTICAL,
+          speed: 1000,
+          onFlipDone: (status) {
+            print(status);
+          },
+          front: Container(
+              decoration: BoxDecoration(
+                  gradient: RadialGradient(
+                colors: [color.withOpacity(0.1), Colors.white70],
+              )),
+              padding: EdgeInsets.all(10),
+              child: Center(
+                child: Text(kana,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    )),
+              )),
+          back: Container(
+              decoration: BoxDecoration(
+                  gradient: RadialGradient(
+                colors: [color.withOpacity(0.1), Colors.white70],
+              )),
+              padding: EdgeInsets.all(10),
+              child: Center(
+                child: Text(roomaji,
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    )),
+              )),
+        ),
+      ),
     );
   }
 }

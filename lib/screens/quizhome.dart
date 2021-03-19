@@ -8,7 +8,7 @@ import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:provider/provider.dart';
 import 'package:jap_training_beginner/screens/quiz.dart';
-import 'package:jap_training_beginner/screens/result.dart';
+import 'package:jap_training_beginner/widget/result.dart';
 
 class QuizHome extends StatefulWidget {
   @override
@@ -102,7 +102,7 @@ class _QuizHomeState extends State<QuizHome> {
             return MaterialApp(
               home: Scaffold(
                 appBar: AppBar(
-                  title: Text('Japanese Language Training (Kana)'),
+                  title: Text('Katakana Quiz'),
                 ),
                 body: _questionIndex < _questions.length
                     ? Quiz(

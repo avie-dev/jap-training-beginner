@@ -5,6 +5,7 @@ import 'package:jap_training_beginner/widget/kana_flashcard.dart';
 import 'package:jap_training_beginner/widget/kana_flashcard.dart';
 // import 'package:jap_training_beginner/screens/content/hiragana.dart';
 import 'package:jap_training_beginner/screens/content/quizcategory.dart';
+import './screens/login/login.dart';
 // import 'package:jap_training_beginner/screens/landing.dart';
 // import 'package:jap_training_beginner/screens/login/login.dart';
 // import 'package:jap_training_beginner/screens/login/button.dart';
@@ -31,8 +32,10 @@ class App extends StatelessWidget {
             canvasColor: Color.fromRGBO(255, 254, 229, 1),
             fontFamily: 'Raleway'),
         //home: Login(),
+        debugShowCheckedModeBanner: false,
         routes: {
-          '/': (ctx) => CategoriesScreen(),
+          // '/': (ctx) => CategoriesScreen(),
+          '/': (ctx) => Login(),
           FlashcardScreen.routeName: (ctx) => FlashcardScreen(),
           Flashcard.routeName: (ctx) => Flashcard(),
         },

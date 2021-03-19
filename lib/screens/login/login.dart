@@ -8,6 +8,8 @@ import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:provider/provider.dart';
 
+import '../quizhome.dart';
+
 class Login extends StatefulWidget {
   @override
   _LoginState createState() => _LoginState();
@@ -21,8 +23,8 @@ class _LoginState extends State<Login> {
     var authBloc = Provider.of<AuthBloc>(context, listen: false);
     loginStateSubscription = authBloc.currentUser.listen((fbUser) {
       if (fbUser != null) {
-        Navigator.of(context)
-            .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+        Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => QuizHome()));
       }
     });
     super.initState();
