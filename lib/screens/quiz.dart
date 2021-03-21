@@ -16,16 +16,23 @@ class Quiz extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Question(
-          questions[questionIndex]['question'],
+    return SizedBox(
+      child: Card(
+        elevation: 20,
+        child: Column(
+          children: [
+            Question(
+              questions[questionIndex]['question'],
+            ),
+            ...(questions[questionIndex]['answers']
+                    as List<Map<String, Object>>)
+                .map((answer) {
+              return Answer(
+                  () => answerQuestion(answer['score']), answer['text']);
+            }).toList()
+          ],
         ),
-        ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
-            .map((answer) {
-          return Answer(() => answerQuestion(answer['score']), answer['text']);
-        }).toList()
-      ],
+      ),
     );
   }
 }

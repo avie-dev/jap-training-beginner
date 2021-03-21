@@ -25,24 +25,38 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        children: <Widget>[
-          Text(
-            resultPhrase,
-            style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
-            textAlign: TextAlign.center,
+      child: SizedBox(
+        width: 300,
+        height: 400,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15.0),
           ),
-          Text(resultScore.toString()),
-          TextButton(
-            child: Text(
-              'Restart Quiz!',
+          elevation: 10,
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Column(
+              children: <Widget>[
+                Text(
+                  resultPhrase,
+                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                Text(resultScore.toString()),
+                TextButton(
+                  child: Text(
+                    'Restart Quiz!',
+                  ),
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.blue),
+                  ),
+                  onPressed: resetHandler,
+                ),
+              ],
             ),
-            style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-            ),
-            onPressed: resetHandler,
           ),
-        ],
+        ),
       ),
     );
   }
