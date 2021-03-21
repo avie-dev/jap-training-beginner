@@ -29,8 +29,8 @@ class AuthBloc {
 
         //User Credential to Sign in with Firebase
         final result = await authService.signInWithCredential(credential);
-
         print('${result.user.displayName} is now logged in');
+        print('${result.user.photoURL}');
 
         break;
       case FacebookLoginStatus.cancel:

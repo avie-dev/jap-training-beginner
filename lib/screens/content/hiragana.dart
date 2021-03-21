@@ -29,7 +29,7 @@ class _HiraganaQuizState extends State<HiraganaQuiz> {
         hiraganaModel.question = element['question'];
         hiraganaModel.answer = element['answer'];
         hiraganaModel.meaning = element['meaning'];
-
+        print(hiraganaModel);
         hiragana.add(hiraganaModel);
       });
     });
@@ -45,7 +45,7 @@ class _HiraganaQuizState extends State<HiraganaQuiz> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Students"),
+        title: Text("Hiragana Quiz"),
         elevation: 0,
       ),
       body: Container(
@@ -93,9 +93,11 @@ class QuizTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(20),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [Text('QUESTION'), Text("$question"), Text("$answer")]));
+      padding: EdgeInsets.all(20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [Text('QUESTION'), Text("$question"), Text("$answer")],
+      ),
+    );
   }
 }

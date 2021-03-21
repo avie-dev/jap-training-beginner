@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/screens/category_kana.dart';
+import 'package:jap_training_beginner/screens/content/katakana.dart';
 
 class CategoryItem extends StatelessWidget {
   final String id;
   final String title;
-  final Color color;
-  final String img;
+  final String imgUrl;
 
-  CategoryItem(this.id, this.title, this.color, this.img);
+  CategoryItem(this.id, this.title, this.imgUrl);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed(FlashcardScreen.routeName, arguments: {
+    Navigator.of(ctx).pushNamed(KatakanaQuiz.routeName, arguments: {
       'id': id,
       'title': title,
     });
@@ -21,46 +21,30 @@ class CategoryItem extends StatelessWidget {
     return InkWell(
       onTap: () => selectCategory(context),
       splashColor: Colors.blue,
-      borderRadius: BorderRadius.circular(15),
       child: Container(
-        //padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Center(
-              child: Container(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-                color: Colors.black54,
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+            FittedBox(
+              child: Card(
+                elevation: 10.0,
+                child: Container(
+                  height: 90,
+                  width: 90,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                    child: Image(
+                      fit: BoxFit.contain,
+                      alignment: Alignment.topRight,
+                      image: AssetImage(imgUrl),
+                    ),
                   ),
-                  softWrap: true,
-                  overflow: TextOverflow.fade,
                 ),
-              ),
-            ),
-            CircleAvatar(
-              radius: 60,
-              backgroundColor: Colors.yellow,
-              backgroundImage: AssetImage('images/gold_frame.png'),
-              child: CircleAvatar(
-                backgroundImage: AssetImage(img),
-                radius: 58.0,
               ),
             ),
           ],
         ),
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [color.withOpacity(0.1), color],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
-            borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
       ),
     );
   }

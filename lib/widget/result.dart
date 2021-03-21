@@ -8,14 +8,16 @@ class Result extends StatelessWidget {
 
   String get resultPhrase {
     String resultText;
-    if (resultScore <= 8) {
-      resultText = 'You are awesome and innocent!';
-    } else if (resultScore <= 12) {
-      resultText = 'Pretty likeable!';
-    } else if (resultScore <= 16) {
-      resultText = 'You are ... strange?!';
+    if (resultScore == 10) {
+      resultText = 'You are awesome! That\'s perfect!';
+    } else if (resultScore >= 9) {
+      resultText = 'Good! Just one more try!';
+    } else if (resultScore >= 5) {
+      resultText = 'Good! Just one more try!';
+    } else if (resultScore >= 1) {
+      resultText = 'Better luck next time!';
     } else {
-      resultText = 'You are so bad!';
+      resultText = 'It\'s okay! Try again';
     }
     return resultText;
   }
@@ -30,11 +32,14 @@ class Result extends StatelessWidget {
             style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
             textAlign: TextAlign.center,
           ),
-          FlatButton(
+          Text(resultScore.toString()),
+          TextButton(
             child: Text(
               'Restart Quiz!',
             ),
-            textColor: Colors.blue,
+            style: ButtonStyle(
+              foregroundColor: MaterialStateProperty.all<Color>(Colors.blue),
+            ),
             onPressed: resetHandler,
           ),
         ],

@@ -20,6 +20,8 @@ dependencies:
   http: ^0.13.0
   kana_kit: ^2.0.0
   flip_card: ^0.4.4
+  animated_text_kit: ^4.0.0
+
 
 dev_dependencies:
   flutter_test:
@@ -31,6 +33,8 @@ flutter:
   assets:
     - images/
     - images/bg/
+    - images/menu/
+    - images/foods/
   fonts:
     - family: Raleway
       fonts:

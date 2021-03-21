@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widget/question.dart';
-import './answer.dart';
+import 'answer.dart';
 
 class Quiz extends StatelessWidget {
   final List<Map<String, Object>> questions;
@@ -19,7 +19,7 @@ class Quiz extends StatelessWidget {
     return Column(
       children: [
         Question(
-          questions[questionIndex]['questionText'],
+          questions[questionIndex]['question'],
         ),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {

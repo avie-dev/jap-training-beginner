@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/auth/auth.dart';
+import 'package:jap_training_beginner/screens/answer.dart';
 import 'package:jap_training_beginner/screens/category_kana.dart';
+import 'package:jap_training_beginner/screens/content/katakana.dart';
 import 'package:jap_training_beginner/widget/kana_flashcard.dart';
 import 'package:jap_training_beginner/widget/kana_flashcard.dart';
 // import 'package:jap_training_beginner/screens/content/hiragana.dart';
@@ -34,10 +36,11 @@ class App extends StatelessWidget {
         //home: Login(),
         debugShowCheckedModeBanner: false,
         routes: {
-          // '/': (ctx) => CategoriesScreen(),
-          '/': (ctx) => Login(),
-          FlashcardScreen.routeName: (ctx) => FlashcardScreen(),
+          '/': (ctx) => CategoriesScreen(),
+          // '/': (ctx) => Login(),
+          KatakanaQuiz.routeName: (ctx) => KatakanaQuiz(),
           Flashcard.routeName: (ctx) => Flashcard(),
+          // Answer.routeName: (ctx) => Answer(),
         },
       ),
     );

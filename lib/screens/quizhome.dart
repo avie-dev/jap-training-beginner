@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:jap_training_beginner/auth/auth.dart';
+import 'package:jap_training_beginner/models/katakanaquiz.dart';
 import 'package:jap_training_beginner/screens/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,9 @@ class QuizHome extends StatefulWidget {
 
 class _QuizHomeState extends State<QuizHome> {
   StreamSubscription<User> QuizHomeStateSubscription;
+  String _fbUserName;
+  String _fbPhotoUrl;
+
   final _questions = const [
     {
       'questionText': 'くろ',
@@ -81,6 +85,9 @@ class _QuizHomeState extends State<QuizHome> {
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (context) => Login()));
       }
+      _fbUserName = fbUser.displayName;
+      // _fbPhotoUrl = fbUser.photoURL;
+      // print('test' + _fbPhotoUrl);
     });
     super.initState();
   }
@@ -91,7 +98,29 @@ class _QuizHomeState extends State<QuizHome> {
     super.dispose();
   }
 
-  @override
+  void _handlePressed() {
+    setState(() {
+      print(_fbPhotoUrl);
+    });
+  }
+
+  Widget _buildProfileIconButton() {
+    const iconSize = 32.0;
+    return IconButton(
+      icon: _fbPhotoUrl == null
+          ? Icon(
+              Icons.account_circle,
+              size: iconSize,
+            )
+          : CircleAvatar(
+              backgroundImage: NetworkImage(_fbPhotoUrl),
+              backgroundColor: Colors.transparent,
+              radius: iconSize / 2,
+            ),
+      onPressed: _handlePressed,
+    );
+  }
+
   Widget build(BuildContext context) {
     var authBloc = Provider.of<AuthBloc>(context);
     return Scaffold(
@@ -102,9 +131,10 @@ class _QuizHomeState extends State<QuizHome> {
             return MaterialApp(
               home: Scaffold(
                 appBar: AppBar(
-                  title: Text('Katakana Quiz'),
+                  title: Text(_fbUserName),
+                  //leading: _buildProfileIconButton(),
                 ),
-                body: _questionIndex < _questions.length
+                body: _questionIndex <= _questions.length
                     ? Quiz(
                         answerQuestion: _answerQuestion,
                         questionIndex: _questionIndex,

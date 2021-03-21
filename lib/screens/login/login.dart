@@ -1,14 +1,12 @@
 import 'dart:async';
 
 import 'package:jap_training_beginner/auth/auth.dart';
-import 'package:jap_training_beginner/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:jap_training_beginner/screens/content/katakana.dart';
 import 'package:provider/provider.dart';
-
-import '../quizhome.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -23,8 +21,9 @@ class _LoginState extends State<Login> {
     var authBloc = Provider.of<AuthBloc>(context, listen: false);
     loginStateSubscription = authBloc.currentUser.listen((fbUser) {
       if (fbUser != null) {
+        print(fbUser.displayName);
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (context) => QuizHome()));
+            MaterialPageRoute(builder: (context) => KatakanaQuiz()));
       }
     });
     super.initState();
