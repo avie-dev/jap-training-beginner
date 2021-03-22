@@ -1,15 +1,11 @@
 import 'dart:async';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/auth/auth.dart';
 import 'package:jap_training_beginner/models/katakana_question.dart';
 import 'package:jap_training_beginner/screens/login/login.dart';
-import 'package:jap_training_beginner/widget/category_item.dart';
 import 'package:jap_training_beginner/widget/result.dart';
-
 import 'package:provider/provider.dart';
-
 import '../quiz.dart';
 
 class KatakanaQuiz extends StatefulWidget {
@@ -88,7 +84,7 @@ class _KatakanaQuizState extends State<KatakanaQuiz> {
               appBar: AppBar(
                 title: Text(_fbUserName),
               ),
-              body: _questionIndex < _questions.length
+              body: _questionIndex < newQuestions.length
                   ? Quiz(
                       answerQuestion: _answerQuestion,
                       questionIndex: _questionIndex,

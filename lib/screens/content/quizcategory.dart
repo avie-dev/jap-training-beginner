@@ -22,11 +22,22 @@ class CategoriesScreen extends StatelessWidget {
             child: Column(children: <Widget>[
               Container(child: Padding(padding: EdgeInsets.all(30.0))),
               SizedBox(),
-              Text('Choose your training menu.',
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
-                  )),
+              Text(
+                'Choose your quiz category.',
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.indigo,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 10.0,
+                      color: Colors.blue,
+                      offset: Offset(5.0, 5.0),
+                    )
+                  ],
+                ),
+                textAlign: TextAlign.center,
+              ),
               Expanded(
                   child: GridView(
                       children: katakanaCategories

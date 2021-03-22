@@ -35,6 +35,7 @@ flutter:
     - images/bg/
     - images/menu/
     - images/foods/
+    - images/fashion/
   fonts:
     - family: Raleway
       fonts:

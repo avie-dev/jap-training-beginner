@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 import '../models/katakana_menu.dart';
 
 const katakanaCategories = const [
@@ -13,11 +11,11 @@ const katakanaCategories = const [
   //   title: 'Drinks',
   //   imgUrl: 'images/menu/drinks.png',
   // ),
-  // Category(
-  //   id: 'c2',
-  //   title: 'Clothing',
-  //   imgUrl: 'images/menu/clothing.png',
-  // ),
+  Category(
+    id: 'c2',
+    title: 'Fashion',
+    imgUrl: 'images/menu/clothing.png',
+  ),
   Category(
     id: 'c4',
     title: 'Foods',
