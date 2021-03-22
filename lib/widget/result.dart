@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:jap_training_beginner/auth/auth.dart';
 import 'package:jap_training_beginner/screens/content/quizcategory.dart';
+import 'package:provider/provider.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
@@ -25,6 +28,7 @@ class Result extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var authBloc = Provider.of<AuthBloc>(context);
     return Center(
       child: SizedBox(
         width: 300,
@@ -90,6 +94,9 @@ class Result extends StatelessWidget {
                               builder: (context) => CategoriesScreen()));
                     },
                   ),
+                  SignInButton(Buttons.Facebook,
+                      text: 'Sign out of Facebook',
+                      onPressed: () => authBloc.logout())
                 ],
               ),
             ),

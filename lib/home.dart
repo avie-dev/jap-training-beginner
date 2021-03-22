@@ -7,14 +7,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
 import 'package:provider/provider.dart';
-import 'package:jap_training_beginner/screens/quizhome.dart';
 
-class Home extends StatefulWidget {
+class Logout extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _LogoutState createState() => _LogoutState();
 }
 
-class _HomeState extends State<Home> {
+class _LogoutState extends State<Logout> {
   StreamSubscription<User> homeStateSubscription;
 
   @override
@@ -53,9 +52,8 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20.0,
                 ),
-                Text(snapshot.data.photoURL),
                 CircleAvatar(
-                  backgroundImage: AssetImage('images/jap-logo-white-bg.png'),
+                  backgroundImage: AssetImage(snapshot.data.photoURL),
                   radius: 60.0,
                 ),
                 SizedBox(

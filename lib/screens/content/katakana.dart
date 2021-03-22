@@ -80,6 +80,7 @@ class _KatakanaQuizState extends State<KatakanaQuiz> {
       child: StreamBuilder<User>(
           stream: authBloc.currentUser,
           builder: (context, snapshot) {
+            if (!snapshot.hasData) return CircularProgressIndicator();
             return Scaffold(
               appBar: AppBar(
                 title: Text(_fbUserName),
