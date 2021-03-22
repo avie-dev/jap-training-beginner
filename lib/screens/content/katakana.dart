@@ -2,19 +2,18 @@ import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:jap_training_beginner/auth/auth.dart';
 import 'package:jap_training_beginner/models/katakana_question.dart';
 import 'package:jap_training_beginner/screens/login/login.dart';
+import 'package:jap_training_beginner/widget/category_item.dart';
 import 'package:jap_training_beginner/widget/result.dart';
-import 'dart:convert' as convert;
 
 import 'package:provider/provider.dart';
 
 import '../quiz.dart';
 
 class KatakanaQuiz extends StatefulWidget {
-  static const routeName = '/katakanaquiz';
+  static const routeName = '/katakanaQuiz';
 
   @override
   _KatakanaQuizState createState() => _KatakanaQuizState();
@@ -25,6 +24,9 @@ class _KatakanaQuizState extends State<KatakanaQuiz> {
   String _fbUserName;
 
   final _questions = katakanaQuestions;
+  // get _questions =>
+  //     katakanaQuestions.where((e) => e['memo'] == 'foods').toList();
+
   var _questionIndex = 0;
   var _totalScore = 0;
 
@@ -71,25 +73,28 @@ class _KatakanaQuizState extends State<KatakanaQuiz> {
   }
 
   Widget build(BuildContext context) {
+    final routeArgs =
+        ModalRoute.of(context).settings.arguments as Map<String, String>;
+    final categoryTitle = routeArgs['title'];
+    var newQuestions =
+        katakanaQuestions.where((e) => e['memo'] == categoryTitle).toList();
     var authBloc = Provider.of<AuthBloc>(context);
     return Scaffold(
         body: Center(
       child: StreamBuilder<User>(
           stream: authBloc.currentUser,
           builder: (context, snapshot) {
-            return MaterialApp(
-              home: Scaffold(
-                appBar: AppBar(
-                  title: Text(_fbUserName),
-                ),
-                body: _questionIndex < _questions.length
-                    ? Quiz(
-                        answerQuestion: _answerQuestion,
-                        questionIndex: _questionIndex,
-                        questions: _questions,
-                      )
-                    : Result(_totalScore, _resetQuiz),
+            return Scaffold(
+              appBar: AppBar(
+                title: Text(_fbUserName),
               ),
+              body: _questionIndex < _questions.length
+                  ? Quiz(
+                      answerQuestion: _answerQuestion,
+                      questionIndex: _questionIndex,
+                      questions: newQuestions,
+                    )
+                  : Result(_totalScore, _resetQuiz),
             );
           }),
     ));

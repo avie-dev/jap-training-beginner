@@ -53,6 +53,7 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   height: 20.0,
                 ),
+                Text(snapshot.data.photoURL),
                 CircleAvatar(
                   backgroundImage: AssetImage('images/jap-logo-white-bg.png'),
                   radius: 60.0,

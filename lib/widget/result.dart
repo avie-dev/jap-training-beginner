@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jap_training_beginner/screens/content/quizcategory.dart';
 
 class Result extends StatelessWidget {
   final int resultScore;
@@ -9,13 +10,13 @@ class Result extends StatelessWidget {
   String get resultPhrase {
     String resultText;
     if (resultScore == 10) {
-      resultText = 'You are awesome! That\'s perfect!';
+      resultText = 'You are awesome! \n That\'s perfect!';
     } else if (resultScore >= 9) {
-      resultText = 'Good! Just one more try!';
+      resultText = 'Great Job!';
     } else if (resultScore >= 5) {
-      resultText = 'Good! Just one more try!';
+      resultText = 'Good Job! \n Just one more try!';
     } else if (resultScore >= 1) {
-      resultText = 'It will be better next time!';
+      resultText = 'Opps! \n It will be better next time!';
     } else {
       resultText = 'It\'s okay! Try again';
     }
@@ -70,6 +71,24 @@ class Result extends StatelessWidget {
                           MaterialStateProperty.all<Color>(Colors.blue),
                     ),
                     onPressed: resetHandler,
+                  ),
+                  TextButton(
+                    child: Text(
+                      'Go Back to Category!',
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      textAlign: TextAlign.center,
+                    ),
+                    style: ButtonStyle(
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CategoriesScreen()));
+                    },
                   ),
                 ],
               ),

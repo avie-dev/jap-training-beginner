@@ -7,12 +7,16 @@ class Question extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        width: double.infinity,
-        margin: EdgeInsets.all(10),
-        child: Image(
-          image: AssetImage(questionText),
-          height: 250,
-        ));
+    return Column(
+      children: [
+        Container(
+            width: double.infinity,
+            margin: EdgeInsets.all(10),
+            child: Image(
+              image: AssetImage(questionText),
+              height: 250,
+            )),
+      ],
+    );
   }
 }

@@ -3,6 +3,8 @@ import 'package:jap_training_beginner/models/katakana_menu_data.dart';
 import 'package:jap_training_beginner/widget/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
+  static const routeName = '/categoryScreen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,9 +13,12 @@ class CategoriesScreen extends StatelessWidget {
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('images/bg/niceblue.png'),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                image: AssetImage("images/bg/colorfulbg.gif"),
+                fit: BoxFit.fitWidth,
+                alignment: Alignment.topCenter,
+              ),
+            ),
             child: Column(children: <Widget>[
               Container(child: Padding(padding: EdgeInsets.all(30.0))),
               SizedBox(),
@@ -38,20 +43,6 @@ class CategoriesScreen extends StatelessWidget {
           ),
         ],
       ),
-      // bottomNavigationBar: BottomNavigationBar(
-      //   items: const [
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         (Icons.home),
-      //       ),
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: Icon(
-      //         (Icons.home),
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

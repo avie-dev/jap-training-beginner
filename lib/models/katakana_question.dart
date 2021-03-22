@@ -1,7 +1,7 @@
 final katakanaQuestions = [
   {
     "id": "kata_13",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/mayonnaise.png",
     "answers": [
       {"text": "マーヨネズ", 'score': 0},
@@ -12,7 +12,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_12",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/ramen.png",
     "answers": [
       {"text": "ラーメーン", 'score': 0},
@@ -23,7 +23,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_11",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/hamburger.png",
     "answers": [
       {"text": "ハーンバガー", 'score': 0},
@@ -35,7 +35,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_10",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/orange.png",
     "answers": [
       {"text": "オレンジ", 'score': 1},
@@ -47,7 +47,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_9",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/cheese.png",
     "answers": [
       {"text": "チース", 'score': 0},
@@ -59,7 +59,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_8",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/curry.png",
     "answers": [
       {"text": "カレー", 'score': 1},
@@ -71,7 +71,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_7",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/melon.png",
     "answers": [
       {"text": "メロン", 'score': 1},
@@ -83,7 +83,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_6",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/pepper.png",
     "answers": [
       {"text": "ピマーン", 'score': 0},
@@ -95,7 +95,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_5",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/pineapple.png",
     "answers": [
       {"text": "パナップル", 'score': 0},
@@ -107,7 +107,7 @@ final katakanaQuestions = [
   },
   {
     "id": "kata_4",
-    "memo": "foods",
+    "memo": "Foods",
     "question": "images/foods/beef.png",
     "answers": [
       {"text": "ヒーフ", 'score': 0},
@@ -120,7 +120,7 @@ final katakanaQuestions = [
 
 //   {
 //     "id": "kata_3",
-//     "memo": "foods",
+//     "memo": "Foods",
 //     "question": "images/foods/pizza.png",
 //     "choices_a": "ピッザ",
 //     "choices_b": "ピッザー",
@@ -131,7 +131,7 @@ final katakanaQuestions = [
 //   },
 //   {
 //     "id": "kata_2",
-//     "memo": "foods",
+//     "memo": "Foods",
 //     "question": "images/foods/banana.png",
 //     "choices_a": "ハナナ",
 //     "choices_b": "バナナ",
@@ -142,7 +142,7 @@ final katakanaQuestions = [
 //   },
 //   {
 //     "id": "kata_1",
-//     "memo": "foods",
+//     "memo": "Foods",
 //     "question": "images/foods/croquette.png",
 //     "choices_a": "コッロケ",
 //     "choices_b": "コロッケ",
