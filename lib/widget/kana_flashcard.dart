@@ -22,13 +22,10 @@ class Flashcard extends StatelessWidget {
     this.color,
   });
 
-  @override
   void selectRow() {}
 
   @override
   Widget build(BuildContext context) {
-    final routeArgs =
-        ModalRoute.of(context).settings.arguments as Map<String, String>;
     return Card(
       elevation: 0,
       shape: RoundedRectangleBorder(

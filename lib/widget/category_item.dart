@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jap_training_beginner/screens/category_kana.dart';
 import 'package:jap_training_beginner/screens/content/katakana.dart';
 
 class CategoryItem extends StatelessWidget {

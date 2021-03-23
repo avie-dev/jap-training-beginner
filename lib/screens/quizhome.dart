@@ -1,12 +1,9 @@
 import 'dart:async';
 
 import 'package:jap_training_beginner/auth/auth.dart';
-import 'package:jap_training_beginner/models/katakanaquiz.dart';
 import 'package:jap_training_beginner/screens/login/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_signin_button/button_list.dart';
-import 'package:flutter_signin_button/button_view.dart';
 import 'package:provider/provider.dart';
 import 'package:jap_training_beginner/screens/quiz.dart';
 import 'package:jap_training_beginner/widget/result.dart';
@@ -17,10 +14,8 @@ class QuizHome extends StatefulWidget {
 }
 
 class _QuizHomeState extends State<QuizHome> {
-  StreamSubscription<User> QuizHomeStateSubscription;
+  StreamSubscription<User> quizHomeStateSubscription;
   String _fbUserName;
-  String _fbPhotoUrl;
-
   final _questions = const [
     {
       'questionText': 'くろ',
@@ -80,7 +75,7 @@ class _QuizHomeState extends State<QuizHome> {
   @override
   void initState() {
     var authBloc = Provider.of<AuthBloc>(context, listen: false);
-    QuizHomeStateSubscription = authBloc.currentUser.listen((fbUser) {
+    quizHomeStateSubscription = authBloc.currentUser.listen((fbUser) {
       if (fbUser == null) {
         Navigator.of(context)
             .pushReplacement(MaterialPageRoute(builder: (context) => Login()));
@@ -94,31 +89,8 @@ class _QuizHomeState extends State<QuizHome> {
 
   @override
   void dispose() {
-    QuizHomeStateSubscription.cancel();
+    quizHomeStateSubscription.cancel();
     super.dispose();
-  }
-
-  void _handlePressed() {
-    setState(() {
-      print(_fbPhotoUrl);
-    });
-  }
-
-  Widget _buildProfileIconButton() {
-    const iconSize = 32.0;
-    return IconButton(
-      icon: _fbPhotoUrl == null
-          ? Icon(
-              Icons.account_circle,
-              size: iconSize,
-            )
-          : CircleAvatar(
-              backgroundImage: NetworkImage(_fbPhotoUrl),
-              backgroundColor: Colors.transparent,
-              radius: iconSize / 2,
-            ),
-      onPressed: _handlePressed,
-    );
   }
 
   Widget build(BuildContext context) {

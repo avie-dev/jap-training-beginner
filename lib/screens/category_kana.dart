@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:jap_training_beginner/models/kana_data.dart';
 import 'package:jap_training_beginner/models/kana_model.dart';
 import 'package:jap_training_beginner/widget/kana_flashcard.dart';
-import 'package:jap_training_beginner/widget/flashcard_item.dart';
-import 'package:jap_training_beginner/models/katakanaquiz.dart';
 
 class FlashcardScreen extends StatelessWidget {
   static const routeName = '/flashcardmenu';
